@@ -9,12 +9,12 @@ fn main() {
     let args: Vec<String> = env::args().collect(); // Komut satırı argümanlarını topla
 
     if args.len() < 4 {
-        println!("Kullanım: {} <görüntü yolu> <boz veya düzelt> <anahtar>", args[0]);
+        println!("Kullanım: {} <görüntü yolu> <encrypt veya decrypt> <anahtar>", args[0]);
         return;
     }
 
     let img_path = &args[1]; // İlk argüman: görüntü dosyasının yolu
-    let action = &args[2]; // İkinci argüman: yapılacak işlem (boz veya düzelt)
+    let action = &args[2]; // İkinci argüman: yapılacak işlem (encrypt veya decrypt)
     let key = &args[3]; // Üçüncü argüman: anahtar
 
     let img = match image::open(&Path::new(img_path)) {
@@ -26,21 +26,21 @@ fn main() {
     };
 
     match action.as_str() {
-        "boz" => {
-            let corrupted_img = process_image(&img, key); // Görüntüyü boz
+        "encrypt" => {
+            let corrupted_img = process_image(&img, key); // Görüntüyü encrypt
             match save_image(&corrupted_img, img_path) {
-                Ok(_) => println!("Piksel bozulmuş görüntü '{}' olarak kaydedildi.", img_path),
-                Err(e) => println!("Bozuk görüntü kaydedilirken hata oluştu: {}", e),
+                Ok(_) => println!("Piksel encryptulmuş görüntü '{}' olarak kaydedildi.", img_path),
+                Err(e) => println!("encryptuk görüntü kaydedilirken hata oluştu: {}", e),
             }
         }
-        "düzelt" => {
-            let fixed_img = process_image(&img, key); // Görüntüyü düzelt
+        "decrypt" => {
+            let fixed_img = process_image(&img, key); // Görüntüyü decrypt
             match save_image(&fixed_img, img_path) {
-                Ok(_) => println!("Piksel düzeltilmiş görüntü '{}' olarak kaydedildi.", img_path),
-                Err(e) => println!("Düzeltilmiş görüntü kaydedilirken hata oluştu: {}", e),
+                Ok(_) => println!("Piksel decryptilmiş görüntü '{}' olarak kaydedildi.", img_path),
+                Err(e) => println!("decryptilmiş görüntü kaydedilirken hata oluştu: {}", e),
             }
         }
-        _ => println!("Geçersiz seçenek! 'boz' veya 'düzelt' seçeneğini kullanın."),
+        _ => println!("Geçersiz seçenek! 'encrypt' veya 'decrypt' seçeneğini kullanın."),
     }
 }
 
