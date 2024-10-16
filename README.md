@@ -5,7 +5,7 @@ Download and install Rust libraries. Then you should open an empty project. Add 
 Select the image you want to encrypt and enter the following command. In place of the letter **"X"**, enter the path of the image you want to encrypt.
 
 ```
-cargo run your/path/x.png encrypt [your_password]
+cargo run [x.png] encrypt [your_password]
 ```
 
 # How to use decryption for pixel
