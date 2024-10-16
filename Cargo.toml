@@ -1,0 +1,13 @@
+[package]
+name = "sifreleme"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+image = "0.24.6"
+rand = "0.8.5"
+sha2 = "0.10.6"
+
+[[bin]]
+name = "sifreleme"
+path = "main.rs"
