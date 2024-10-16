@@ -1,0 +1,1 @@
+C:\Users\murti\Desktop\Project\Visual-Pixel-Encryption-main\Visual-Pixel-Encryption-main\target\debug\sifreleme.exe: C:\Users\murti\Desktop\Project\Visual-Pixel-Encryption-main\Visual-Pixel-Encryption-main\main.rs
