@@ -55,7 +55,7 @@ Key Sensitivity: Decryption requires the exact same key as encryption.
 📥 Installation
 Clone this repository:
 ```bash
-git clone https://github.com/<your-username>/<repo-name>.git
+git clone https://github.com/muratustunova/Visual-Pixel-Encryption.git
 cd <repo-name>
 ```
 Build the project:
