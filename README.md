@@ -28,13 +28,13 @@ Decrypting an image requires the same key used during encryption. Applying the X
 cargo run <image_path> <encrypt|decrypt> <key>
 ```
 ## Examples
-# Encrypt an Image
+### Encrypt an Image
 ```bash
 cargo run ./input_image.png encrypt my_secret_key
 ```
 Output: output/encrypted_input_image.png
 
-# Decrypt an Image
+### Decrypt an Image
 ```bash
 cargo run ./output/encrypted_input_image.png decrypt my_secret_key
 ```
