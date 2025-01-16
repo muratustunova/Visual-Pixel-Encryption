@@ -26,3 +26,44 @@ Decrypting an image requires the same key used during encryption. Applying the X
 ### **Command**  
 ```bash
 cargo run <image_path> <encrypt|decrypt> <key>
+```
+## Examples
+Encrypt an Image
+```bash
+cargo run ./input_image.png encrypt my_secret_key
+```
+Output: output/encrypted_input_image.png
+
+Decrypt an Image
+```bash
+cargo run ./output/encrypted_input_image.png decrypt my_secret_key
+```
+Output: output/decrypted_input_image.png
+
+### How the Mask Is Generated
+The mask is created using:
+
+A SHA-256 hash of the key.
+A seeded random number generator (StdRng) initialized with the hash.
+Random RGBA pixel values for the entire image.
+This ensures that the mask is consistent for the same key and image dimensions.
+
+⚠️ Limitations
+Output File Size: The encrypted images are saved as PNGs, which may increase file size.
+Key Sensitivity: Decryption requires the exact same key as encryption.
+
+📥 Installation
+Clone this repository:
+```bash
+git clone https://github.com/<your-username>/<repo-name>.git
+cd <repo-name>
+```
+Build the project:
+```bash
+cargo build
+```
+🤝 Contributing
+Contributions are welcome! Feel free to fork the repository and submit a pull request.
+
+📌 License
+This project is licensed under the MIT License.
