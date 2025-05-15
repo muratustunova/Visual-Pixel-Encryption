@@ -18,6 +18,13 @@ Given a key, the program generates a unique mask for the image. The mask ensures
 ### **Decryption Process**  
 Decrypting an image requires the same key used during encryption. Applying the XOR operation again restores the original image.  
 
+## 🛡️ Why This Project?
+
+This project was developed as a contribution to national digital security initiatives.  
+Focusing on cryptography and image-based data encryption, it aims to inspire both the open-source community and professionals working in national intelligence and cybersecurity fields.
+
+> 🇹🇷 I write code dedicated to the digital defense of my country.
+
 ## 📂 File Structure  
 - **Input Image**: The image to be encrypted or decrypted.  
 - **Output Directory**: Stores encrypted and decrypted images (`output/encrypted_*.png`, `output/decrypted_*.png`).  
